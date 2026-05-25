@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: ommia_postgres
+
+    environment:
+      POSTGRES_DB: ommia
+      POSTGRES_USER: ommia_user
+      POSTGRES_PASSWORD: ommia_password
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -8,7 +8,7 @@ class Region(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        db_table = "core_region"
+        db_table = "region"
 
     def __str__(self):
         return self.region_name
@@ -22,7 +22,7 @@ class Estado(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        db_table = "core_estado"
+        db_table = "estado"
 
     def __str__(self):
         return self.estado_name
@@ -40,7 +40,7 @@ class OOAD(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        db_table = "core_ooad"
+        db_table = "ooad"
 
     def __str__(self):
         return self.ooad_name
@@ -61,7 +61,7 @@ class UMAE(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        db_table = "core_umae"
+        db_table = "umae"
 
     def __str__(self):
         return self.umae_name
@@ -69,6 +69,7 @@ class UMAE(models.Model):
 
 class UnidadMedica(models.Model):
     NIVEL_ATENCION_CHOICES = [
+        ("0", "Apoyo"),
         ("1", "Primer Nivel"),
         ("2", "Segundo Nivel"),
         ("3", "Tercer Nivel"),
@@ -105,7 +106,7 @@ class UnidadMedica(models.Model):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        db_table = "core_unidad_medica"
+        db_table = "unidad_medica"
 
         # Índices pensados para filtros frecuentes por organización y geografía.
         indexes = [
